@@ -324,7 +324,7 @@ export function DietPlanModal({
           >
 
             <a
-              href="tel:+919415113233"
+              href="tel:+919415187520"
               className="flex items-center justify-center gap-3"
             >
 
