@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { CallNowBanner } from '@/components/call-now-banner'
 import './globals.css'
@@ -87,6 +88,7 @@ export default function RootLayout({
         <WelcomeModal />
         </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <SpeedInsights />
       </body>
     </html>
   )
