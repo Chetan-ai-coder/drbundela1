@@ -19,19 +19,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.drbundela.com'),
-  // SEO TIP: Putting the location and service at the start of the title helps local ranking
-  title: 'Best Homeopathy Clinic in Jhansi | Dr. R.S.S. Bundela - Natural Healing',
-  description: 'Top-rated homeopathy clinic in Jhansi. Dr. R.S.S. Bundela provides expert natural treatments for hair loss, skin issues, thyroid, PCOS, and allergies. Safe and permanent healing solutions in Jhansi.',
-  keywords: 'homeopathy clinic in Jhansi, best homeopath in Jhansi, natural healing Jhansi, hair loss treatment Jhansi, Dr. RSS Bundela, homeopathy doctor Jhansi',
+  
+  title: 'Best Homoeopathy Clinic in Jhansi | Dr. R.S.S. Bundela - Natural Healing',
+  description: 'Top-rated homoeopathy clinic in Jhansi. Dr. R.S.S. Bundela provides expert natural treatments for hair loss, skin issues, thyroid, PCOS, and allergies. Safe and permanent healing solutions in Jhansi.',
+  keywords: 'homoeopathy clinic in Jhansi, best homoeopath in Jhansi, natural healing Jhansi, hair loss treatment Jhansi, Dr. RSS Bundela, homoeopathy doctor Jhansi',
   authors: [{ name: 'Dr. R.S.S. Bundela' }],
   alternates: {
     canonical: 'https://www.drbundela.com',
   },
   openGraph: {
-    title: 'Dr. R.S.S. Bundela | Trusted Homeopathy Clinic in Jhansi',
-    description: 'Expert homeopathic care for chronic diseases in Jhansi. Experience natural healing without side effects.',
+    title: 'Dr. R.S.S. Bundela | Trusted Homoeopathy Clinic in Jhansi',
+    description: 'Expert homoeopathic care for chronic diseases in Jhansi. Experience natural healing without side effects.',
     url: 'https://www.drbundela.com',
-    siteName: 'Dr. R.S.S. Bundela Homeopathy',
+    siteName: 'Dr. R.S.S. Bundela Homoeopathy',
     locale: 'en_IN',
     type: 'website',
   },
@@ -52,8 +52,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    'name': 'Dr. R.S.S. Bundela Homeopathy Clinic',
-    'alternateName': 'Bundela Homeopathy Jhansi',
+    'name': 'Dr. R.S.S. Bundela Homoeopathy Clinic',
+    'alternateName': 'Bundela Homoeopathy Jhansi',
     'url': 'https://www.drbundela.com',
     'logo': 'https://www.drbundela.com/logo.png', // Update with actual logo URL
     'address': {
@@ -67,8 +67,8 @@ export default function RootLayout({
       'latitude': '25.4484', // Standard Jhansi Lat
       'longitude': '78.5685', // Standard Jhansi Long
     },
-    'description': 'Leading homeopathy clinic in Jhansi providing natural medical solutions.',
-    'medicalSpecialty': 'Homeopathic',
+    'description': 'Leading homoeopathy clinic in Jhansi providing natural medical solutions.',
+    'medicalSpecialty': 'Homoeopathic',
   };
 
   return (
