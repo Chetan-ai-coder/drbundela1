@@ -71,7 +71,7 @@ export function HeroSection() {
                 className="rounded-full text-base px-8 h-14 border-2"
               >
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919415187520"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
