@@ -12,7 +12,6 @@ export default function imagekitLoader({
     return "";
   }
 
-  // If already a full URL, return as is
   if (src.startsWith("http")) {
     return src;
   }

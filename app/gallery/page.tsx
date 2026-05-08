@@ -134,7 +134,7 @@ export default function GalleryPage() {
                   }`}
                 >
                   <img 
-                    src={`${image.url}?tr=w-800,q-80`} // ImageKit optimization
+                    src={`${image.url}?tr=w-800,q-80`}
                     alt={image.title} 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                   />
