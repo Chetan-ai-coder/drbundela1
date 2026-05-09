@@ -37,7 +37,7 @@ export function CallNowBanner() {
             }}
             className="flex items-center gap-2 bg-white text-[oklch(0.42_0.14_25)] hover:bg-neutral-100 px-8 py-2 rounded-full shadow-xl border border-white/40 transition-all duration-300 group mb-1 font-semibold"
           >
-            <div className="bg-[oklch(0.45_0.15_25)]/10 p-1 rounded-full">
+            <div className="bg-[oklch(0.45_0.15_25)]/10 p-2 rounded-full">
               <Phone className="w-4 h-4 fill-[oklch(0.45_0.15_25)]" />
             </div>
 
