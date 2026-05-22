@@ -96,7 +96,7 @@ export default function SliderSection() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden top-30"
+      className="relative w-full h-screen overflow-hidden top-10 md:top-30"
 
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
