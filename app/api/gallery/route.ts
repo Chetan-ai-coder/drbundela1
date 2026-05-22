@@ -33,7 +33,7 @@ export async function GET() {
 
     const files = (await imagekit.listFiles({
       path: "Dr Bundela/Gallery",
-      limit: 150,
+      limit: 180,
     })) as ImageKitFile[];
 
     console.log("Gallery images found:", files.length);

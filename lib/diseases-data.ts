@@ -77,6 +77,7 @@ export const diseaseCategories: DiseaseCategory[] = [
     items: [
       { id: "allergic-rhinitis", en: "Allergic Rhinitis", hi: "एलर्जिक राइनाइटिस", image: "/Dr Bundela/diseases/Allergic Rhinitis.jpg" },
       { id: "nasal-bleeding", en: "Nasal Bleeding", hi: "नाक से खून आना", image: "/Dr Bundela/diseases/Nasal Bleeding.jpg" },
+      { id: "tonsillitis", en: "Tonsillitis", hi: "टॉन्सिलाइटिस ", image: "/Dr Bundela/diseases/Tonsillitis.jpg" },
     ]
   },
   {

@@ -3,7 +3,7 @@ export const translations = {
         hero: {
             badge: "Trusted by 10,000+ Patients",
             titleMain: "Heal Naturally,",
-            titleSub: "Live Better",
+            titleSub: " Live Better",
             description: "Experience the power of homoeopathy with Dr. R.S.S. Bundela (A Surgeon Without Knife). Safe, gentle, and effective treatments that address the root cause of your health concerns.",
             benefits: ["100% Natural Treatment", "No Side Effects", "Root Cause Healing"],
             btnBook: "Book Appointment",
@@ -41,15 +41,15 @@ export const translations = {
         services: {
             badge: "Our Expertise",
             title: "Treatments We Offer",
-            description: "Specialized homeopathic treatments for a wide range of health conditions, tailored to your unique constitution and needs.",
+            description: "Specialized homoeopathic treatments for a wide range of health conditions, tailored to your unique constitution and needs.",
             btnViewAll: "View All Services",
             btnLearnMore: "Learn More",
             items: [
                 {
-                    title: "Hair Loss Treatment",
-                    description: "Natural remedies to stop hair fall, promote regrowth, and restore your confidence.",
-                    image: "/Dr Bundela/Treatment/treatment-hair.jpg",
-                    slug: "hair-loss",
+                    title: "Diet & Nutrition Consultation",
+                    description: "Our holistic dietary guidance integrates seamless nutritional therapy with your homoeopathic treatment to accelerate recovery and optimize wellness.",
+                    image: "/Dr Bundela/Services/services-dietitian",
+                    slug: "dietitian",
                 },
                 {
                     title: "Skin Problems",
@@ -59,13 +59,13 @@ export const translations = {
                 },
                 {
                     title: "Mental Wellness",
-                    description: "Holistic support for anxiety, stress, and emotional balance through gentle homeopathic care.",
+                    description: "Holistic support for anxiety, stress, and emotional balance through gentle homoeopathic care.",
                     image: "/Dr Bundela/Treatment/treatment-wellness.jpg",
                     slug: "mental-wellness",
                 },
                 {
                     title: "Thyroid Disorders",
-                    description: "Balance your thyroid naturally with personalized homeopathic treatment plans.",
+                    description: "Balance your thyroid naturally with personalized homoeopathic treatment plans.",
                     image: "/Dr Bundela/Treatment/treatment-thyroid.jpg",
                     slug: "thyroid",
                 },
@@ -163,7 +163,7 @@ export const translations = {
         awards: {
             badge: "Milestones",
             title: "Awards & Achievements",
-            description: "Recognizing 30+ years of excellence in homeopathic healing and patient care.",
+            description: "Recognizing 30+ years of excellence in homoeopathic healing and patient care.",
             items: [
                 { title: "Homooeopathy Ratna", subtitle: "Excellence in Service 2024" },
                 { title: "Legends World Record", subtitle: "Clinical Recognition 2025" },
@@ -175,14 +175,14 @@ export const translations = {
         },
         gallery: {
             badge: "Our Space",
-            title: "Bundela's Gallery",
+            title: "Dr. Bundela's Gallery",
             description: "Take a virtual tour of our modern, comfortable, and hygienic clinic designed to make your healing journey pleasant.",
             images: [
                 { src: "/Dr Bundela/Gallery/gallery-1.jpg", alt: "Awards" },
-                { src: "/Dr Bundela/Gallery/gallery-2.jpg", alt: "Chill Time" },
+                { src: "/Dr Bundela/Gallery/597388594_25441719765487715_8372743568924512117_n.jpg", alt: "Awards" },
                 { src: "/Dr Bundela/Gallery/gallery-3", alt: "World Homoeopathy Day" },
                 { src: "/Dr Bundela/Gallery/gallery-4.jpg", alt: "Father of Homoeopathy" },
-                { src: "/Dr Bundela/Gallery/gallery-5.jpg", alt: "World Yoga Day" },
+                { src: "/Dr Bundela/Gallery/585783232_25191817220477972_4400497489410510142_n.jpg", alt: "Awards" },
                 { src: "/Dr Bundela/Gallery/gallery-6.jpg", alt: "Samuel Hahnemann's Birthday" },
             ]
         },
@@ -194,7 +194,7 @@ export const translations = {
             footer: "First consultation includes comprehensive health assessment • Same-day appointments available"
         },
         footer: {
-            description: "Dedicated to providing safe, natural, and effective homeopathic treatments that address the root cause of your health concerns.",
+            description: "Dedicated to providing safe, natural, and effective homoeopathic treatments that address the root cause of your health concerns.",
             quickLinksTitle: "Quick Links",
             treatmentsTitle: "Our Treatments",
             contactTitle: "Contact Info",
@@ -221,10 +221,10 @@ export const translations = {
         },
         aboutPage: {
             metaTitle: "About Dr. R.S.S. Bundela | Homoeopathy Expert",
-            metaDesc: "Learn about Dr. R.S.S. Bundela, a renowned homeopathic doctor with 28+ years of experience.",
+            metaDesc: "Learn about Dr. R.S.S. Bundela, a renowned homoeopathic doctor with 28+ years of experience.",
             heroBadge: "About Dr. Bundela",
             heroTitle: "Healing Through Nature, Guided by Science",
-            heroPara1: "Dr. R.S.S. Bundela (A Surgeon Without Knife) is a distinguished homeopathic physician with over 28 years of experience in treating complex chronic conditions. His approach combines classical homoeopathy principles with modern diagnostic methods to deliver exceptional patient outcomes.",
+            heroPara1: "Dr. R.S.S. Bundela (A Surgeon Without Knife) is a distinguished homoeopathic physician with over 28 years of experience in treating complex chronic conditions. His approach combines classical homoeopathy principles with modern diagnostic methods to deliver exceptional patient outcomes.",
             heroPara2: "With a career spanning over two decades, Dr. Bundela completed his DHMS in 1998, followed by a BHMS in 2005. A dedicated practitioner, he has been serving the community of Jhansi since August 2, 2000, specializing in providing holistic and long-term relief for chronic conditions.",
             heroPara3: "His clinic in Jhansi has become a beacon of hope for thousands of patients seeking natural, side-effect-free solutions to their health problems.",
             btns: { book: "Book Consultation", contact: "Contact Us" },
@@ -239,9 +239,9 @@ export const translations = {
                 title: "Education & Experience",
                 desc: "A solid academic foundation paired with over two decades of clinical experience in Jhansi.",
                 items: [
-                    { year: "1998", title: "DHMS", institution: "Completed Diploma in Homeopathic Medicine" },
+                    { year: "1998", title: "DHMS", institution: "Completed Diploma in Homoeopathic Medicine" },
                     { year: "2000", title: "Clinical Practice", institution: "Established Clinic in Jhansi (Aug 2)" },
-                    { year: "2005", title: "BHMS", institution: "Bachelor of Homeopathic Medicine and Surgery" },
+                    { year: "2005", title: "BHMS", institution: "Bachelor of Homoeopathic Medicine and Surgery" },
                     { year: "Current", title: "Senior Consultant", institution: "25+ Years of Dedicated Service" },
                 ]
             },
@@ -265,15 +265,15 @@ export const translations = {
                 ]
             },
             cta: {
-                title: "Ready to Start Your Healing Journey?",
-                desc: "Book a consultation and experience personalized homeopathic care.",
+                title: "Ready to Start Your Healing Journey ?",
+                desc: "Book a consultation and experience personalized homoeopathic care.",
                 btn: "Book Your Appointment"
             }
         },
         servicesPage: {
             hero: {
                 badge: "Our Expertise",
-                title: "Homeopathic Treatments",
+                title: "Homoeopathic Treatments",
                 desc: "Comprehensive, natural solutions for chronic health conditions. Each treatment is personalized to your unique constitution and health needs."
             },
             process: {
@@ -294,6 +294,26 @@ export const translations = {
             },
             items: [
                 {
+                    id: "dietitian",
+                    title: "Diet & Nutrition Consultation",
+                    description: "True healing requires nourishing your body from within. Our holistic dietary guidance integrates seamless nutritional therapy with your homoeopathic treatment to accelerate recovery and optimize wellness.",
+                    benefitsTitle: "Benefits",
+                    conditionsTitle: "Focus Areas",
+                    btn: "Book Consultation",
+                    benefits: ["Customized therapeutic meal plans", "Improves gut metabolism", "Sustainable weight management", "Enhances energy and vitality", "100% natural nutritional tracking"],
+                    conditions: ["Therapeutic clinical nutrition", "Weight management (Gain/Loss)", "Digestive & metabolic health", "Diabetic & hypertension diets", "Nutritional deficiencies"]
+                },
+                {
+                    id: "yoga",
+                    title: "Yoga & Holistic Wellness",
+                    description: "Align your physical vitality with mental stillness. Our therapeutic yoga guidelines are crafted to target chronic ailments, assisting your body's natural defense mechanisms along with homoeopathic care.",
+                    benefitsTitle: "Benefits",
+                    conditionsTitle: "Focus Areas",
+                    btn: "Book Consultation",
+                    benefits: ["Reduces systemic stress levels", "Improves physical flexibility", "Enhances respiratory capacity", "Boosts internal immune response", "Restores hormonal equilibrium"],
+                    conditions: ["Therapeutic medical yoga", "Stress & anxiety management", "Postural correction routines", "Chronic pain mitigation", "Pranayama & deep meditation"]
+                },
+                {
                     id: "hair-loss",
                     title: "Hair Loss Treatment",
                     description: "Hair loss can be distressing, but homoeopathy offers a natural and effective solution. Our treatment addresses the root causes of hair loss, whether it's hormonal imbalance, nutritional deficiency, stress, or genetic factors.",
@@ -306,7 +326,7 @@ export const translations = {
                 {
                     id: "skin-problems",
                     title: "Skin Problems",
-                    description: "Skin conditions require a holistic approach that goes beyond topical treatments. Our homeopathic solutions work from within to restore your skin's natural health and radiance.",
+                    description: "Skin conditions require a holistic approach that goes beyond topical treatments. Our homoeopathic solutions work from within to restore your skin's natural health and radiance.",
                     benefitsTitle: "Benefits",
                     conditionsTitle: "Conditions Treated",
                     btn: "Book Consultation",
@@ -340,7 +360,7 @@ export const translations = {
                 {
                     id: "thyroid",
                     title: "Thyroid Disorders",
-                    description: "Thyroid imbalances affect millions worldwide. Our homeopathic approach helps regulate thyroid function naturally, reducing dependency on synthetic hormones over time.",
+                    description: "Thyroid imbalances affect millions worldwide. Our homoeopathic approach helps regulate thyroid function naturally, reducing dependency on synthetic hormones over time.",
                     benefitsTitle: "Benefits",
                     conditionsTitle: "Conditions Treated",
                     btn: "Book Consultation",
@@ -360,7 +380,7 @@ export const translations = {
                 {
                     id: "allergy",
                     title: "Allergy Relief",
-                    description: "Allergies indicate an overactive immune response. Our homeopathic treatment strengthens your immune system to respond appropriately, providing long-term relief from allergic reactions.",
+                    description: "Allergies indicate an overactive immune response. Our homoeopathic treatment strengthens your immune system to respond appropriately, providing long-term relief from allergic reactions.",
                     benefitsTitle: "Benefits",
                     conditionsTitle: "Conditions Treated",
                     btn: "Book Consultation",
@@ -370,7 +390,7 @@ export const translations = {
                 {
                     id: "digestive",
                     title: "Digestive Issues",
-                    description: "Digestive health is fundamental to overall wellness. Our homeopathic remedies restore gut balance, improve digestion, and provide relief from chronic digestive disorders.",
+                    description: "Digestive health is fundamental to overall wellness. Our homoeopathic remedies restore gut balance, improve digestion, and provide relief from chronic digestive disorders.",
                     benefitsTitle: "Benefits",
                     conditionsTitle: "Conditions Treated",
                     btn: "Book Consultation",
@@ -394,7 +414,7 @@ export const translations = {
             },
             success: {
                 title: "Appointment Request Received!",
-                desc: "Thank you for booking with us. We will confirm your appointment via phone or email within 24 hours.",
+                desc: "Thank you for booking with us.",
                 btn: "Return to Home"
             },
             form: {
@@ -405,7 +425,7 @@ export const translations = {
                 phonePlaceholder: "+91 XXXXX XXXXX",
                 emailLabel: "Email Address",
                 emailPlaceholder: "your@email.com",
-                serviceLabel: "Service Required *",
+                serviceLabel: "Service Required",
                 servicePlaceholder: "Select a service",
                 dateLabel: "Preferred Date *",
                 timeLabel: "Preferred Time *",
@@ -475,9 +495,9 @@ export const translations = {
                 title: "Send Us a Message",
                 name: "Your Name *",
                 phone: "Phone Number *",
-                email: "Email Address *",
-                subject: "Subject *",
-                message: "Your Message *",
+                email: "Email Address",
+                subject: "Subject",
+                message: "Your Message",
                 placeholderName: "Enter your name",
                 placeholderSubject: "How can we help you?",
                 placeholderMsg: "Write your message here...",
@@ -491,9 +511,9 @@ export const translations = {
                 title: "Frequently Asked Questions",
                 items: [
                     { q: "How long does a typical consultation take?", a: "First consultations usually take 45-60 minutes as we need to understand your complete health history. Follow-up visits are typically 15-20 minutes." },
-                    { q: "Is homoeopathy safe for children and pregnant women?", a: "Yes, homeopathic medicines are completely safe and gentle, making them ideal for children, pregnant women, and elderly patients." },
+                    { q: "Is homoeopathy safe for children and pregnant women?", a: "Yes, homoeopathic medicines are completely safe and gentle, making them ideal for children, pregnant women, and elderly patients." },
                     { q: "How soon can I expect results?", a: "Results vary. Acute conditions may respond within days, while chronic conditions may take a few weeks to show improvement." },
-                    { q: "Do I need to stop my current medications?", a: "No, homeopathic medicines can be taken alongside conventional medications. However, always inform us about your medications." },
+                    { q: "Do I need to stop my current medications?", a: "No, homoeopathic medicines can be taken alongside conventional medications. However, always inform us about your medications." },
                     { q: "Is online consultation available?", a: "Yes, we offer online video consultations for patients who cannot visit the clinic in person." }
                 ]
             }
@@ -518,7 +538,7 @@ export const translations = {
         whyHomeopathy: {
             badge: "प्राकृतिक उपचार",
             title: "होम्योपैथी ही क्यों चुनें ?",
-            description: "होम्योपैथी चिकित्सा की एक कोमल लेकिन शक्तिशाली प्रणाली है जो आपके शरीर की प्राकृतिक उपचार क्षमताओं को उत्तेजित करती है।",
+            description: "होम्योपैथी, चिकित्सा की एक कोमल लेकिन शक्तिशाली प्रणाली है जो आपके शरीर की प्राकृतिक उपचार क्षमताओं को उत्तेजित करती है।",
             features: [
                 {
                     title: "100% प्राकृतिक",
@@ -534,7 +554,7 @@ export const translations = {
                 },
                 {
                     title: "स्थायी परिणाम",
-                    description: "स्थायी उपचार और स्वास्थ्य के लिए बीमारी के मूल कारणों पर काम करें।"
+                    description: "स्थायी उपचार और स्वास्थ्य के लिए बीमारी के मूल कारणों पर काम करते हैं।"
                 }
             ]
         },
@@ -546,10 +566,10 @@ export const translations = {
             btnLearnMore: "और जानें",
             items: [
                 {
-                    title: "बालों के झड़ने का इलाज",
-                    description: "बालों का झड़ना रोकने, पुनर्विकास को बढ़ावा देने और आपके आत्मविश्वास को बहाल करने के लिए प्राकृतिक उपचार।",
-                    image: "/Dr Bundela/Treatment/treatment-hair.jpg",
-                    slug: "hair-loss",
+                    title: "आहार और पोषण परामर्श (Dietitian)",
+                    description: "हमारा समग्र आहार परामर्श आपकी रिकवरी को तेज करने के लिए होम्योपैथिक उपचार के साथ पोषण चिकित्सा को जोड़ता है।",
+                    image: "/Dr Bundela/Services/services-dietitian",
+                    slug: "dietitian",
                 },
                 {
                     title: "त्वचा की समस्याएं",
@@ -675,14 +695,14 @@ export const translations = {
         },
         gallery: {
             badge: "हमारा क्लिनिक",
-            title: "बुंदेला गैलरी",
+            title: "डॉ. बुंदेला गैलरी",
             description: "हमारे आधुनिक, आरामदायक और स्वच्छ क्लिनिक का वर्चुअल टूर लें, जो आपकी उपचार यात्रा को सुखद बनाने के लिए डिज़ाइन किया गया है।",
             images: [
-                { src: "/Dr Bundela/Gallery/gallery-1.jpg", alt: "पुरस्कार समारोह" },
-                { src: "/Dr Bundela/Gallery/gallery-2.jpg", alt: "विश्राम का समय" },
+                { src: "/Dr Bundela/Gallery/gallery-1.jpg", alt: "पुरस्कार" },
+                { src: "/Dr Bundela/Gallery/597388594_25441719765487715_8372743568924512117_n.jpg", alt: "पुरस्कार" },
                 { src: "/Dr Bundela/Gallery/gallery-3", alt: "विश्व होम्योपैथी दिवस" },
                 { src: "/Dr Bundela/Gallery/gallery-4.jpg", alt: "होम्योपैथी के जनक" },
-                { src: "/Dr Bundela/Gallery/gallery-5.jpg", alt: "विश्व योग दिवस" },
+                { src: "/Dr Bundela/Gallery/585783232_25191817220477972_4400497489410510142_n.jpg", alt: "पुरस्कार" },
                 { src: "/Dr Bundela/Gallery/gallery-6.jpg", alt: "सैम्युअल हैनीमैन जयंती" },
             ]
         },
@@ -765,7 +785,7 @@ export const translations = {
                 ]
             },
             cta: {
-                title: "अपनी उपचार यात्रा शुरू करने के लिए तैयार हैं?",
+                title: "अपनी उपचार यात्रा शुरू करने के लिए तैयार हैं ?",
                 desc: "परामर्श बुक करें और व्यक्तिगत होम्योपैथिक देखभाल का अनुभव करें।",
                 btn: "अपना अपॉइंटमेंट बुक करें"
             }
@@ -793,6 +813,26 @@ export const translations = {
                 btn: "अपना अपॉइंटमेंट बुक करें"
             },
             items: [
+                {
+                    "id": "dietitian",
+                    "title": "आहार और पोषण परामर्श (Dietitian)",
+                    "description": "सच्चे उपचार के लिए आपके शरीर को भीतर से पोषण मिलना आवश्यक है। हमारा समग्र आहार परामर्श आपकी रिकवरी को तेज करने के लिए होम्योपैथिक उपचार के साथ पोषण चिकित्सा को जोड़ता है।",
+                    "benefitsTitle": "लाभ",
+                    "conditionsTitle": "मुख्य ध्यान क्षेत्र",
+                    "btn": "परामर्श बुक करें",
+                    "benefits": ["अनुकूलित चिकित्सीय आहार योजना", "पेट के चयापचय (Metabolism) में सुधार", "स्थायी वजन प्रबंधन", "ऊर्जा और जीवन शक्ति को बढ़ाता है", "प्राकृतिक पोषण ट्रैकिंग"],
+                    "conditions": ["चिकित्सीय नैदानिक ​​पोषण", "वजन प्रबंधन (घटाना/बढ़ाना)", "पाचन और चयापचय स्वास्थ्य", "मधुमेह और उच्च रक्तचाप आहार", "पोषण संबंधी कमियां"]
+                },
+                {
+                    "id": "yoga",
+                    "title": "योग और समग्र कल्याण (Yoga)",
+                    "description": "अपनी शारीरिक जीवन शक्ति को मानसिक शांति के साथ संरेखित करें। हमारे चिकित्सीय योग दिशानिर्देश पुरानी बीमारियों को लक्षित करने और होम्योपैथिक चिकित्सा के पूरक के रूप में तैयार किए गए हैं।",
+                    "benefitsTitle": "लाभ",
+                    "conditionsTitle": "मुख्य ध्यान क्षेत्र",
+                    "btn": "परामर्श बुक करें",
+                    "benefits": ["शारीरिक और मानसिक तनाव कम करता है", "शारीरिक लचीलेपन (Flexibility) में सुधार", "श्वसन क्षमता को बढ़ाता है", "आंतरिक प्रतिरक्षा प्रणाली को बढ़ावा", "हार्मोनल संतुलन बहाल करता है"],
+                    "conditions": ["चिकित्सीय योग सत्र", "तनाव और चिंता प्रबंधन", "शारीरिक मुद्रा (Posture) सुधार", "गंभीर पुराने दर्द से राहत", "प्राणायाम और गहन ध्यान"]
+                },
                 {
                     id: "hair-loss",
                     title: "बालों के झड़ने का उपचार",
@@ -894,7 +934,7 @@ export const translations = {
             },
             success: {
                 title: "अपॉइंटमेंट अनुरोध प्राप्त हुआ!",
-                desc: "हमारे साथ बुकिंग करने के लिए धन्यवाद। हम 24 घंटों के भीतर फोन या ईमेल के माध्यम से आपके अपॉइंटमेंट की पुष्टि करेंगे।",
+                desc: "हमारे साथ बुकिंग करने के लिए धन्यवाद।",
                 btn: "होम पर वापस जाएं"
             },
             form: {
@@ -905,7 +945,7 @@ export const translations = {
                 phonePlaceholder: "+91 XXXXX XXXXX",
                 emailLabel: "ईमेल पता",
                 emailPlaceholder: "your@email.com",
-                serviceLabel: "आवश्यक सेवा *",
+                serviceLabel: "आवश्यक सेवा",
                 servicePlaceholder: "एक सेवा चुनें",
                 dateLabel: "पसंदीदा तारीख *",
                 timeLabel: "पसंदीदा समय *",
@@ -975,9 +1015,9 @@ export const translations = {
                 title: "हमें संदेश भेजें",
                 name: "आपका नाम *",
                 phone: "फ़ोन नंबर *",
-                email: "ईमेल पता *",
-                subject: "विषय *",
-                message: "आपका संदेश *",
+                email: "ईमेल पता",
+                subject: "विषय",
+                message: "आपका संदेश",
                 placeholderName: "आपका नाम यहाँ लिखें",
                 placeholderSubject: "हम आपकी कैसे मदद कर सकते हैं?",
                 placeholderMsg: "अपना संदेश यहाँ लिखें...",

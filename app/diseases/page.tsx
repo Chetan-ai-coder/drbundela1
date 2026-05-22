@@ -59,8 +59,8 @@ function DiseaseCard({ disease, index, categoryId }: { disease: DiseaseItem; ind
 
       {/* Text */}
       <div className="disease-card__body">
-        <p className="disease-card__name-en">{disease.en}</p>
         <p className="disease-card__name-hi">{disease.hi}</p>
+        <p className="disease-card__name-en">{disease.en}</p>
 
         <button
           className="disease-card__cta"
@@ -444,17 +444,17 @@ export default function DiseasesPage() {
         }
         .disease-card__name-en {
           font-family: var(--font-sans);
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 500;
           color: var(--color-slate);
           line-height: 1.3;
           margin: 0;
         }
         .disease-card__name-hi {
-          font-size: 12px;
+          font-size: 20px;
           color: var(--color-slate-mid);
           margin: 0;
-          font-weight: 300;
+          font-weight: 700;
         }
         .disease-card__cta {
           margin-top: 10px;

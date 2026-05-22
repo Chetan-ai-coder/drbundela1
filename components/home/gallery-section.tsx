@@ -9,7 +9,6 @@ import { translations } from "@/lib/translations"
 
 export function GallerySection() {
   const { ref, isVisible } = useScrollAnimation()
-  
   const { lang } = useLanguage()
   const t = (translations[lang] || translations.en).gallery
 
@@ -29,9 +28,6 @@ export function GallerySection() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             {t.title}
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            {t.description}
-          </p>
         </div>
 
         {/* Gallery Grid */}

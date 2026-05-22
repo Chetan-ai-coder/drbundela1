@@ -42,9 +42,9 @@ export function DoctorIntroSection() {
 
               {/* Experience Badge */}
               <div className="absolute -right-4 bottom-0 
-              md:-right-6 md:top-1/2 sm:-translate-y-1/2 sm:bottom-auto
+              md:-right-18 md:top-1/2 sm:-translate-y-1/2 sm:bottom-auto
               bg-white rounded-2xl shadow-xl 
-              p-4 sm:p-6 
+              sm:p-6 
               text-center min-w-[100px] sm:min-w-[120px] 
               border border-primary/5 z-20">
                 <p className="font-serif text-4xl font-bold text-primary">{t.expYears}</p>
@@ -58,12 +58,15 @@ export function DoctorIntroSection() {
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               {t.badge}
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              {t.name}
-            </h2>
-            <p className="mt-2 text-xl text-primary font-medium">
-              {t.qualifications}
-            </p>
+            <div className="md:w-[75%] md:text-end">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                {t.name}
+              </h2>
+
+              <p className="mt-2 text-[15px] md:text-xl text-primary font-medium">
+                {t.qualifications}
+              </p>
+            </div>
 
             <p className="mt-6 text-muted-foreground leading-relaxed">
               {t.description1}

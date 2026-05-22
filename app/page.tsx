@@ -10,12 +10,14 @@ import { AwardsSection } from "@/components/home/awards-section"
 import { GallerySection } from "@/components/home/gallery-section"
 import { CTASection } from "@/components/home/cta-section"
 import { CallNowBanner } from "@/components/call-now-banner"
+import SliderSection from "@/components/home/slider-section"
 
 export default function HomePage() {
   return (
     <>
       <Header />
       <main>
+       <SliderSection /> 
         <HeroSection />
         <WhyHomeopathySection />
         <ServicesSection />
@@ -25,6 +27,7 @@ export default function HomePage() {
         <GallerySection />
         <CTASection />
       </main>
+     
       <Footer />
       <WhatsAppButton />
     </>

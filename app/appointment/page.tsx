@@ -7,12 +7,12 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { 
-  Calendar, 
-  Clock, 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Calendar,
+  Clock,
+  Phone,
+  Mail,
+  MapPin,
   CheckCircle,
   User,
   FileText,
@@ -23,8 +23,7 @@ import { useLanguage } from "@/context/LanguageContext"
 import { translations } from "@/lib/translations"
 
 const timeSlots = [
-  "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
-  "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM",
+  "9:00 - 11:00 AM", "11:00 - 1:00 PM", "1:00 - 3:00 PM", "3:00 - 5:00 PM", "5:00 - 7:00 PM",
 ]
 
 export default function AppointmentPage() {
@@ -41,6 +40,7 @@ export default function AppointmentPage() {
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -49,11 +49,32 @@ export default function AppointmentPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    setIsSubmitted(true)
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Sending data to your Next.js backend API route
+      const response = await fetch('/api/appointments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Data saved successfully!");
+        setIsSubmitted(true);
+      } else {
+        console.error("Server responded with an error status.");
+      }
+    } catch (error) {
+      console.error("Failed to send data to backend:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const today = new Date().toISOString().split("T")[0]
 
@@ -98,7 +119,11 @@ export default function AppointmentPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="bg-secondary/30 rounded-3xl p-8 lg:p-12">
-                    <h2 className="font-serif text-2xl font-bold text-foreground mb-8">
+                    <p className="font-semibold pb-3 text-xl text-primary">
+                      Available on Pre Appointment Only
+                    </p>
+
+                    <h2 className="font-serif text-2xl font-bold text-foreground mb-5">
                       {t.form.title}
                     </h2>
 
@@ -163,7 +188,6 @@ export default function AppointmentPage() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          required
                           className="w-full rounded-xl h-12 bg-white border border-input px-4 text-foreground"
                         >
                           <option value="">{t.form.servicePlaceholder}</option>

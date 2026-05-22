@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Leaf } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/context/LanguageContext"
+import Image from "next/image"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -41,17 +42,14 @@ export function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo Section - Keep as is */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-xl font-bold text-foreground">
-                Dr. R.S.S. Bundela
-              </span>
-              <span className="text-xs text-muted-foreground -mt-1">
-                Homoeopathy Clinic
-              </span>
-            </div>
+            
+            <Image
+              src="/Dr Bundela/Doctor/logo.png"
+              alt="Dr. R.S.S. Bundela Logo"
+              width={200}
+              height={50}
+              className="object-contain"
+              />
           </Link>
 
           {/* Desktop Navigation - Keep as is */}
@@ -82,8 +80,10 @@ export function Header() {
               </span>
             </button>
 
-            <a href="tel:+919415187520" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Phone className="w-4 h-4" />
+            <a href="tel:+919415187520" className="flex items-center gap-2 text-sm text-black hover:text-primary transition-colors font-bold">
+              <div className="bg-primary p-2 rounded-full">
+                <Phone className="w-4 h-4 text-white" />
+              </div>
               +91 94151 87520
             </a>
             <Button asChild className="rounded-full">

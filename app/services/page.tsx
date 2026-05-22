@@ -13,6 +13,8 @@ import { translations } from "@/lib/translations"
 
 // Static image mapping to keep translations.ts clean
 const serviceImages: Record<string, string> = {
+  "dietitian": "/Dr Bundela/Services/services-dietitian",
+  "yoga": "/Dr Bundela/Services/services-yoga",
   "hair-loss": "/Dr Bundela/Services/service-hair.jpg",
   "skin-problems": "/Dr Bundela/Services/service-skin.jpg",
   "mental-wellness": "/Dr Bundela/Services/service-mental.jpg",

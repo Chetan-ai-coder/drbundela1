@@ -75,7 +75,7 @@ export function ConsultationContent() {
             <p className="text-gray-500 text-sm border-b pb-2">समस्त जटिल समस्याओं के समाधान के लिए एक मात्र संस्थान</p>
 
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              {data.title} का <span className="text-primary">बिना ऑपरेशन</span> जड़ से इलाज मात्र <span className="text-primary">{data.price} रुपए में</span>
+              {diseaseName} का <span className="text-primary">बिना ऑपरेशन</span> जड़ से इलाज मात्र <span className="text-primary">{data.price} रुपए में</span>
             </h2>
 
             <div className="flex items-center gap-4 flex-wrap">

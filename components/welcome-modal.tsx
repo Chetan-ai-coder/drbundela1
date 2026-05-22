@@ -17,8 +17,8 @@ export function WelcomeModal() {
 
     const content = {
         en: {
-            title: "Welcome to the World of Sweet Pills",
-            subtitle: "The Art & Science of Homeopathic Healing",
+            title: "Welcome in the World of Sweet Pills",
+            subtitle: "The Art & Science of Healing",
             msg: "Order your medicines from the comfort of your home.",
             subMsg: "Call us now for a consultation and home delivery.",
             btn: "Call & Order Now"
@@ -37,11 +37,13 @@ export function WelcomeModal() {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+                <div onClick={() => setIsOpen(false)}
+                className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
                     <motion.div
                         initial={{ opacity: 0, y: 50, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 0.9 }}
                         exit={{ opacity: 0, scale: 0.9 }}
+                        onClick={(e) => e.stopPropagation()}
                         className="relative bg-white rounded-[40px] overflow-hidden max-w-lg w-full shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] border border-white/20"
                     >
                         <div className="relative h-64 w-full">

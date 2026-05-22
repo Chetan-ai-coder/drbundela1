@@ -30,6 +30,7 @@ export default function ContactPage() {
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false) // Track loading state
 
   const contactInfo = [
     {
@@ -68,9 +69,33 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Updated async submission mirroring your appointment page structure
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        console.log("Contact form message saved successfully!")
+        setIsSubmitted(true)
+        // Reset the form values
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+      } else {
+        console.error("Server responded with an error status.")
+      }
+    } catch (error) {
+      console.error("Failed to send contact data to backend:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -118,7 +143,6 @@ export default function ContactPage() {
             <div>
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-6">Visit Our Clinic</h2>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg bg-gray-200">
-                {/* Embed Map Here */}
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.766675373799!2d78.57388807561054!3d25.446063021575384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39777728b33eca5b%3A0xfdfb02126a2d7463!2sDr.%20Bundela's%20The%20Homoeopathy%20Clinic!5e0!3m2!1sen!2sin!4v1777454800391!5m2!1sen!2sin"
                   width="100%"
@@ -155,26 +179,29 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">{t.form.name}</label>
-                      <Input name="name" onChange={handleChange} required placeholder={t.form.placeholderName} />
+                      <Input name="name" value={formData.name} onChange={handleChange} required placeholder={t.form.placeholderName} />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">{t.form.phone}</label>
-                      <Input name="phone" onChange={handleChange} required placeholder="+91 XXXXX XXXXX" />
+                      <Input name="phone" value={formData.phone} onChange={handleChange} required placeholder="+91 XXXXX XXXXX" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">{t.form.email}</label>
-                    <Input type="email" name="email" onChange={handleChange} required placeholder="your@email.com" />
+                    <Input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">{t.form.subject}</label>
-                    <Input name="subject" onChange={handleChange} required placeholder={t.form.placeholderSubject} />
+                    <Input name="subject" value={formData.subject} onChange={handleChange} placeholder={t.form.placeholderSubject} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">{t.form.message}</label>
-                    <textarea name="message" onChange={handleChange} required rows={5} className="w-full rounded-xl border border-input p-4" placeholder={t.form.placeholderMsg} />
+                    <textarea name="message" value={formData.message} onChange={handleChange} rows={5} className="w-full rounded-xl border border-input p-4 text-foreground" placeholder={t.form.placeholderMsg} />
                   </div>
-                  <Button type="submit" size="lg" className="rounded-full w-full md:w-max"><Send className="w-4 h-4 mr-2" />{t.form.submit}</Button>
+                  <Button type="submit" size="lg" disabled={isSubmitting} className="rounded-full w-full md:w-max">
+                    <Send className="w-4 h-4 mr-2" />
+                    {isSubmitting ? "Sending..." : t.form.submit}
+                  </Button>
                 </form>
               )}
             </div>

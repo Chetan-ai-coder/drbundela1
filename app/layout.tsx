@@ -6,6 +6,7 @@ import { CallNowBanner } from '@/components/call-now-banner'
 import './globals.css'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import { WelcomeModal } from '@/components/welcome-modal'
+import { StickyBookButton } from '@/components/book-now'
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
         {children}
         <CallNowBanner />
         <WelcomeModal />
+         <StickyBookButton />
         </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

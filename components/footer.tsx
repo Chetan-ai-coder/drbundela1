@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Leaf, Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 import { translations } from "@/lib/translations"
+import Image from "next/image"
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/drbundela1976", label: "Facebook" },
@@ -23,13 +24,13 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-xl font-bold">Dr. R.S.S. Bundela</span>
-                <span className="text-xs text-white/60 -mt-1">{t.clinicType}</span>
-              </div>
+              <Image
+                src="/Dr Bundela/Doctor/logo.png"
+                alt="Dr. R.S.S. Bundela Logo"
+                width={200}
+                height={50}
+                className="object-contain"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed">
               {t.description}

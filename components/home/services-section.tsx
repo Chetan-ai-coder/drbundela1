@@ -71,31 +71,41 @@ export function ServicesSection() {
                 }`}
             >
               <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden">
+
+                
+                <div className="relative aspect-video overflow-hidden bg-neutral-100">
                   <Image
                     src={treatment.image}
                     alt={treatment.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={false}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                 
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                 </div>
 
+                {/* Content Container */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {treatment.title}
                   </h3>
+
                   <p className="mt-3 text-muted-foreground text-sm leading-relaxed flex-grow">
                     {treatment.description}
                   </p>
+
+                  {/* Action Link */}
                   <Link
                     href={`/services#${treatment.slug}`}
-                    className="inline-flex items-center gap-2 mt-4 text-primary font-medium text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 mt-4 text-primary font-medium text-sm hover:gap-3 transition-all w-fit"
                   >
                     {t.btnLearnMore}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+
               </div>
             </div>
           ))}
@@ -117,10 +127,10 @@ export function ServicesSection() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </DietPlanModal>
-          
+
           {/* Keep ONLY ONE original button */}
           <Button asChild size="lg" variant="outline" className="rounded-full px-8">
-            <Link href="/services">
+            <Link href="/diseases">
               {t.btnViewAll}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
