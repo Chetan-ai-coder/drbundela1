@@ -96,7 +96,7 @@ export default function SliderSection() {
 
   return (
     <section
-      className="relative w-full min-h-[85vh] md:h-screen overflow-hidden md:top-30"
+      className="relative w-full min-h-[55vh] md:h-screen overflow-hidden md:top-30"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
