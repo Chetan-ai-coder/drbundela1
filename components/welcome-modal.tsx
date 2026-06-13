@@ -11,9 +11,33 @@ export function WelcomeModal() {
     const { lang } = useLanguage()
 
     useEffect(() => {
-        const timer = setTimeout(() => setIsOpen(true), 1500)
-        return () => clearTimeout(timer)
-    }, [])
+        let hasOpened = false;
+
+        const handleScroll = () => {
+            if (hasOpened) return;
+
+            const scrollTop = window.scrollY;
+            const documentHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
+
+            const scrollPercentage = (scrollTop / documentHeight) * 100;
+
+            // Show modal after 30% scroll
+            if (scrollPercentage >= 50) {
+                setIsOpen(true);
+                hasOpened = true;
+
+                // Remove listener after opening
+                window.removeEventListener("scroll", handleScroll);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const content = {
         en: {
@@ -38,7 +62,7 @@ export function WelcomeModal() {
         <AnimatePresence>
             {isOpen && (
                 <div onClick={() => setIsOpen(false)}
-                className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+                    className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
                     <motion.div
                         initial={{ opacity: 0, y: 50, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 0.9 }}

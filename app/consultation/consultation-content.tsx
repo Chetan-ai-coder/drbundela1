@@ -1,13 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import { useSearchParams } from 'next/navigation'
 import { Phone, CheckCircle2, Star } from "lucide-react"
 import { motion } from "framer-motion"
 
 const CATEGORY_CONTENT: any = {
   "Piles": {
-    title: "बवासीर - भगन्दर - फिशर",
-    price: "1499*",
+    price: "1599*",
     rating: "4.7",
     reviews: "532",
     recommend: "98.8%",
@@ -15,29 +15,10 @@ const CATEGORY_CONTENT: any = {
       "क्लिनिक एवं ऑनलाइन परामर्श की सुविधा",
       "*1499 रुपए में 30 दिन की दवा",
       "3-5 Month Course* (T&C Apply)",
-      "खूनी एवं बादी बवासीर का इलाज",
-      "मस्सों का इलाज",
-      "पस आने का इलाज",
-      "कब्ज का इलाज",
       "दवाओं की फ्री होम डिलीवरी (पूरे भारत में)",
       "दवाओं की पूर्णतः गोपनीय डिलीवरी",
       "फ्री डाइट चार्ट",
-      "75,654 से ज्यादा संतुष्ट मरीज"
-    ]
-  },
-  "Kidney Stone": {
-    title: "गुर्दे की पथरी / किडनी स्टोन",
-    price: "1599",
-    rating: "4.5",
-    reviews: "24,311",
-    recommend: "97.9%",
-    points: [
-      "क्लिनिक एवं ऑनलाइन परामर्श की सुविधा",
-      "*1599 रुपए में 30 दिन की दवा",
-      "दवाओं की फ्री होम डिलीवरी (पूरे भारत में)",
-      "दवाओं की पूर्णतः गोपनीय डिलीवरी",
-      "फ्री डाइट चार्ट",
-      "75,654 से ज्यादा संतुष्ट मरीज"
+      "5,654 से ज्यादा संतुष्ट मरीज"
     ]
   }
 }
@@ -47,6 +28,39 @@ export function ConsultationContent() {
   const categoryKey = searchParams.get('cat') || "Piles"
   const diseaseName = searchParams.get('disease') || "इस रोग"
   const data = CATEGORY_CONTENT[categoryKey] || CATEGORY_CONTENT["Piles"]
+
+  const [formData, setFormData] = useState({ name: "", phone: "", duration: "" })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      const res = await fetch("/api/consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, disease: diseaseName }),
+      })
+
+      if (res.ok) {
+        setIsSubmitted(true)
+      } else {
+        setError("कुछ गलत हो गया। कृपया पुनः प्रयास करें।")
+      }
+    } catch {
+      setError("कुछ गलत हो गया। कृपया पुनः प्रयास करें।")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white pb-10 pt-24">
@@ -71,17 +85,21 @@ export function ConsultationContent() {
 
       <div className="container mx-auto px-4 py-10">
         <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left Column */}
           <div className="space-y-6">
             <p className="text-gray-500 text-sm border-b pb-2">समस्त जटिल समस्याओं के समाधान के लिए एक मात्र संस्थान</p>
 
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              {diseaseName} का <span className="text-primary">बिना ऑपरेशन</span> जड़ से इलाज मात्र <span className="text-primary">{data.price} रुपए में</span>
+              {diseaseName} का <span className="text-primary">बिना ऑपरेशन</span> जड़ से इलाज मात्र{" "}
+              <span className="text-primary">{data.price} रुपए में</span>
             </h2>
 
             <div className="flex items-center gap-4 flex-wrap">
               <div className="flex items-center text-primary">
                 <span className="text-primary font-bold mr-1">{data.rating}</span>
-                {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="currentColor" />
+                ))}
               </div>
               <span className="text-primary font-semibold underline">{data.reviews} Ratings</span>
               <p className="text-sm text-gray-600 w-full">
@@ -107,28 +125,68 @@ export function ConsultationContent() {
             </div>
           </div>
 
+          {/* Right Column - Form */}
           <div className="sticky top-24">
             <div className="bg-white p-8 rounded-3xl border border-primary-100 shadow-xl">
-              <h3 className="text-xl font-bold mb-6 text-center">विशेषज्ञ सलाह के लिए फॉर्म भरें</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">आपका नाम</label>
-                  <input type="text" placeholder="Your Name" className="w-full p-3 bg-white border rounded-lg" />
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">धन्यवाद!</h3>
+                  <p className="text-gray-600">हम जल्द ही आपसे संपर्क करेंगे।</p>
                 </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">आपका मोबाइल नंबर</label>
-                  <input type="tel" placeholder="Your Mobile Number" className="w-full p-3 bg-white border rounded-lg" />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">आपको कितने दिनों से समस्या है?</label>
-                  <input type="text" placeholder="How many days?" className="w-full p-3 bg-white border rounded-lg" />
-                </div>
+              ) : (
+                <>
+                  <h3 className="text-xl font-bold mb-6 text-center">विशेषज्ञ सलाह के लिए फॉर्म भरें</h3>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">आपका नाम</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your Name"
+                        className="w-full p-3 bg-white border rounded-lg"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">आपका मोबाइल नंबर</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your Mobile Number"
+                        className="w-full p-3 bg-white border rounded-lg"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">आपको कितने दिनों से समस्या है?</label>
+                      <input
+                        type="text"
+                        name="duration"
+                        value={formData.duration}
+                        onChange={handleChange}
+                        placeholder="How many days?"
+                        className="w-full p-3 bg-white border rounded-lg"
+                      />
+                    </div>
 
-                <button className="w-full bg-primary text-white text-xl font-bold py-4 rounded-xl shadow-lg mt-4">
-                  शुरुआत करें
-                </button>
-                <p className="text-center text-xs text-gray-500 italic mt-2">आपकी पहचान गुप्त रखी जायेगी!</p>
-              </form>
+                    {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary text-white text-xl font-bold py-4 rounded-xl shadow-lg mt-4 disabled:opacity-60"
+                    >
+                      {isSubmitting ? "भेज रहे हैं..." : "शुरुआत करें"}
+                    </button>
+                    <p className="text-center text-xs text-gray-500 italic mt-2">आपकी पहचान गुप्त रखी जायेगी!</p>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -15,12 +15,15 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/40 backdrop-blur-sm animate-fade-in">
-            {/* Click Outside Closer */}
-            <div className="absolute inset-0" />
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/40 backdrop-blur-sm animate-fade-in"
+            onClick={onClose}
+        >
 
             {/* Modal Layout Body */}
-            <div className="relative bg-card text-card-foreground w-full max-w-2xl rounded-lg overflow-hidden shadow-2xl border border-border flex flex-col md:flex-row transform transition-all animate-scale-in max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-visible">
+            <div 
+            onClick={(e) => e.stopPropagation()}
+            className="relative bg-card text-card-foreground w-full max-w-2xl rounded-lg overflow-hidden shadow-2xl border border-border flex flex-col md:flex-row transform transition-all animate-scale-in max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-visible">
 
                 {/* Close Button */}
                 <button
@@ -34,11 +37,23 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
                 {/* Side Banner Panel: Image Content */}
                 <div className="relative w-full md:w-2/5 min-h-[180px] md:min-h-full bg-gradient-to-br from-primary/20 to-secondary flex items-end p-6 rounded-lg overflow-hidden">
                     <div className="absolute inset-0">
+
+                        {/* Mobile Image */}
                         <Image
-                            src="/Dr Bundela/Doctor/doctor-hero" // Pulls perfectly from your existing asset library folder structure
+                            src="/Dr Bundela/Homoeopathy/homoeopathy1.jpg"
                             alt="Dr. R.S.S. Bundela"
                             fill
-                            className="object-cover object-center opacity-90 rounded-l-lg"
+                            className="object-cover object-center opacity-90 rounded-l-lg md:hidden"
+                            priority
+                            crossOrigin="anonymous"
+                        />
+
+                        {/* Desktop Image */}
+                        <Image
+                            src="/Dr Bundela/Doctor/doctor-hero"
+                            alt="Dr. R.S.S. Bundela"
+                            fill
+                            className="hidden md:block object-cover object-center opacity-90 rounded-l-lg"
                             priority
                             crossOrigin="anonymous"
                         />
@@ -64,7 +79,7 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
                         <h3 className="font-serif text-2xl font-bold text-foreground tracking-tight">
                             Dr. R.S.S. Bundela
                         </h3>
-    
+
                         <hr className="my-4 border-border" />
 
                         {/* Target Core Statement Callout Box */}

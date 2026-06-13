@@ -258,10 +258,6 @@ export default function AppointmentPage() {
                     <Button type="submit" size="lg" className="rounded-full px-8 mt-8 w-full md:w-auto">
                       {t.form.submitBtn}
                     </Button>
-
-                    <p className="mt-4 text-sm text-muted-foreground">
-                      {t.form.requiredNote}
-                    </p>
                   </form>
                 )}
               </div>

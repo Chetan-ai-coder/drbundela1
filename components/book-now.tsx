@@ -1,11 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppointmentModal } from './AppointmentModal';
 import { Calendar } from 'lucide-react';
 
 export function StickyBookButton() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -17,7 +25,10 @@ export function StickyBookButton() {
         Book Now
       </button>
 
-      <AppointmentModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <AppointmentModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
     </>
   );
 }
