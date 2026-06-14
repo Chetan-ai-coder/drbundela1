@@ -7,13 +7,13 @@ import { motion } from "framer-motion"
 
 const CATEGORY_CONTENT: any = {
   "Piles": {
-    price: "1599*",
+    price: "1499*",
     rating: "4.7",
     reviews: "532",
     recommend: "98.8%",
     points: [
       "क्लिनिक एवं ऑनलाइन परामर्श की सुविधा",
-      "*1499 रुपए में 30 दिन की दवा",
+      "1499* रुपए में 30 दिन की दवा केवल ऑनलाइन मरीजों के लिए",
       "3-5 Month Course* (T&C Apply)",
       "दवाओं की फ्री होम डिलीवरी (पूरे भारत में)",
       "दवाओं की पूर्णतः गोपनीय डिलीवरी",

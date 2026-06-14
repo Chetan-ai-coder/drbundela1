@@ -7,10 +7,25 @@ import { translations } from "@/lib/translations"
 import Image from "next/image"
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/drbundela1976", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-]
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/drbundela1976",
+    label: "Facebook",
+    bgClass: "bg-[#1877F2]"
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/dr.bundela_homoeopathy",
+    label: "Instagram",
+    bgClass: "bg-[#E1306C]"
+  },
+  {
+    icon: Youtube,
+    href: "#",
+    label: "YouTube",
+    bgClass: "bg-[#FF0000]"
+  },
+];
 
 export function Footer() {
   const { lang } = useLanguage()
@@ -40,7 +55,7 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-white transition-opacity hover:opacity-85 ${social.bgClass}`}
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
