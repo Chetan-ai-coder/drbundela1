@@ -1,26 +1,26 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { CallNowBanner } from '@/components/call-now-banner'
 import './globals.css'
-import { WhatsAppButton } from '@/components/whatsapp-button'
 import { WelcomeModal } from '@/components/welcome-modal'
 import { StickyBookButton } from '@/components/book-now'
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: '--font-serif'
 });
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-sans'
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.drbundela.com'),
-  
+
   title: 'Best Homoeopathy Clinic in Jhansi | Dr. R.S.S. Bundela - Natural Healing',
   description: 'Top-rated homoeopathy clinic in Jhansi. Dr. R.S.S. Bundela provides expert natural treatments for hair loss, skin issues, thyroid, PCOS, and allergies. Safe and permanent healing solutions in Jhansi.',
   keywords: 'homoeopathy clinic in Jhansi, best homoeopath in Jhansi, natural healing Jhansi, hair loss treatment Jhansi, Dr. RSS Bundela, homoeopathy doctor Jhansi',
@@ -83,12 +83,17 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased relative">
         <LanguageProvider>
-        {children}
-        <CallNowBanner />
-        <WelcomeModal />
-         <StickyBookButton />
+          {children}
+          <CallNowBanner />
+          <WelcomeModal />
+          <StickyBookButton />
         </LanguageProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   )
